@@ -21,9 +21,9 @@ app.use( (request, response, next) => {
     next();
 });
 
-app.use( (request, response, next) => {
-    response.render('maintenance.hbs');
-});
+// app.use( (request, response, next) => {
+//     response.render('maintenance.hbs');
+// });
 
 app.use(express.static('public'));
 
@@ -47,6 +47,12 @@ app.get('/about', (request, response) => {
    response.render('about.hbs', {
        pageTitle: 'About Page'
    });
+});
+
+app.get('/projects', (request, response) => {
+    response.render('projects.hbs', {
+        pageTitle: 'Projects Page'
+    });
 });
 
 app.get('/bad', (request, response) => {
